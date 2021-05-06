@@ -22,18 +22,19 @@ export class EntrarComponent implements OnInit {
     window.scroll(0,0)
   }
   entrar(){
-    this,this.authService.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
+    this.authService.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
+      this.userLogin = resp
 
     environment.token = this.userLogin.token
     environment.nome = this.userLogin.nome
     environment.foto = this.userLogin.foto
     environment.id = this.userLogin.id
 
-      this.userLogin = resp
+      
       this.router.navigate(['/inicio'])
     },erro =>{
     if(erro.status == 500){
-      alert("Usuario ou senha inavlido")
+      alert("Usuario ou senha inavalido")
 
     }
   } )
