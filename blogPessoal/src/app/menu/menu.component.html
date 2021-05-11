@@ -12,12 +12,12 @@
             <p class="m-0 font-weigth-bold text-white fs-16"> Olá, {{nome}}</p>
           </li>
           <li class="nav-item pl-3">
-              <a href=""><p class="text-white fs-16 m-0"><i class="fa fa-pencil-square " aria-hidden="true"></i></p> </a>
+              <a [routerLink]="['/user-edit',id]"><p class="text-white fs-16 m-0"><i class="fa fa-pencil-square " aria-hidden="true"></i></p> </a>
           </li>
         </ul>
         <ul  class="navbar-nav ml-auto d-flex align-items-center ">
             <li class="nav-item">
-                <a (click)='sair()' class="m-0 font-weigth-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                <a (click)='sair()'class="m-0 font-weigth-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
             </li>
         </ul>
       </div>
